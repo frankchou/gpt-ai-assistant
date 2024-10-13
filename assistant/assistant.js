@@ -41,11 +41,9 @@ class Assistant {
 
   async chat({
     prompt,
-    msg,
     text = '',
   }) {
-    const message = '[{"role": "user", "content":' + msg + '}]';
-    const { data } = await complete({ prompt, message });
+    const { data } = await complete({ prompt });
     const [choice] = data.choices;
     prompt += choice.text.trim();
     text += choice.text.replace(PARTICIPANT_AI, '').replace(':', '').replace('：', '').trim();
