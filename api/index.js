@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
   res.sendStatus(200);
 });
 
-app.post('/webhook', validator(LINE_API_SECRET), async (req, res) => {
+app.post('/callback', validator(LINE_API_SECRET), async (req, res) => {
   try {
     await assistant.handleEvents(req.body.events);
   } catch (err) {
