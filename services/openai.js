@@ -24,6 +24,7 @@ const instance = axios.create({
 export const complete = ({
   model = OPENAI_COMPLETION_MODEL,
   prompt,
+  message,
   temperature = OPENAI_COMPLETION_TEMPERATURE,
   maxTokens = OPENAI_COMPLETION_MAX_TOKENS,
   frequencyPenalty = OPENAI_COMPLETION_FREQUENCY_PENALTY,
@@ -35,6 +36,7 @@ export const complete = ({
 }) => instance.post('/v1/chat/completions', {
   model,
   prompt,
+  message,
   temperature,
   max_tokens: maxTokens,
   frequency_penalty: frequencyPenalty,
