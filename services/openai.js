@@ -35,7 +35,6 @@ export const complete = ({
 }) => instance.post('/v1/chat/completions', {
   model,
   prompt,
-  message: `[{"role": "user", "contnet": "${prompt.PARTICIPANT_HUMAN}"}]`,
   temperature,
   max_tokens: maxTokens,
   frequency_penalty: frequencyPenalty,
