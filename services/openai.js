@@ -32,7 +32,7 @@ export const complete = ({
     ` ${PARTICIPANT_AI}:`,
     ` ${PARTICIPANT_HUMAN}:`,
   ],
-}) => instance.post('/v1/completions', {
+}) => instance.post('/v1/chat/completions', {
   model,
   prompt,
   temperature,
